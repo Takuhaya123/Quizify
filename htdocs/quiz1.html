@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Declaration of meta tags and viewports-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="A. Mananghaya, R.B. Palacol, P.G. Sesante 9-Magnesium">
+  <meta name="keywords" content="quiz, quizify, know yourself, buzzfeed quizzes, trivia, aesthetic, fashion style, trends, fashion, aesthetic style">
+  <meta name="revised" content="05/20/2023">
+  <!--Calling of stylesheets and fonts-->
+    <!-- font-family: 'Raleway', sans-serif; -->
+  <link href="../css/pinterestquizstyles.css" rel="stylesheet" type="text/css" />
+  <link href="../css/generalstyles.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,500;1,300;1,500&display=swap" rel="stylesheet">
+    <!-- font-family: 'Montserrat', sans-serif; -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <!-- font-family: 'Montserrat Alternates', sans-serif; -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+  <!--Site Logo and Title-->
+  <link rel="icon" href="../images/icon.png" type=".png">
+  <title>Quizify - Aesthetic Quiz</title>
+
+  <style>
+    .image{
+      height: 10vw;
+      width: 10vw;
+    }
+  </style>
+</head>
+
+<body onload="onloadCheck()">
+<!--Sign-up and login popup code-->
+<!--Sign-up and login popup code-->
+<div id="signUpPopUp"> <!-- div that shows up on sign in-->
+<form id="signUpForm" onsubmit="return signInForm(event)">
+  <label for="username"><p>Username</p></label>
+  <input type="text" id="sgnusername" name="username" placeholder="Username" onblur="checkFormInput(event)">
+  <label for="password"><p>Password</p></label>
+  <input type="password" id="sgnpassword" name="password" placeholder="Password" onblur="checkFormInput(event)">
+  <label>
+  <input type="checkbox" onclick="showPassSgn()" style="vertical-align: middle;">
+  <span style="vertical-align: middle;">Show Password</span>  
+  </label>
+  <button class="clearInput" onclick="clearSgnForm()">Clear</button>
+  <p id="sgnErrorInput" style="display: none;"></p>
+  <input type="submit" class="submitForm" value="Sign Up" style="margin-bottom: 1vw;">
+  <input type="reset" class="resetForm" value="Cancel" onclick="cancelSignUp()">
+</form>
+</div>
+
+<div id="loginPopUp"> <!-- div that shows up on login-->
+<form id="loginForm" onsubmit="return loginForm(event)">
+  <label for="username"><p>Username</p></label>
+  <input type="text" id="lgnusername" name="username" placeholder="Username" onblur="checkFormInput(event)">
+  <label for="password"><p>Password</p></label>
+  <input type="password" id="lgnpassword" name="password" placeholder="Password" onblur="checkFormInput(event)">
+  <label>
+  <input type="checkbox" onclick="showPassLgn()" style="vertical-align: middle;">
+  <span style="vertical-align: middle;">Show Password</span>  
+  </label>
+  <button class="clearInput" onclick="clearLgnForm()">Clear</button>
+  <p id="lgnErrorInput" style="display: none;"></p>
+  <input type="submit" class="submitForm" value="Login" style="margin-bottom: 1vw;">
+  <input type="reset" class="resetForm" value="Cancel" onclick="cancelLogin()">
+</form>
+</div>
+<!-- other contents -->
+<div class="container" style="background-image: url('https://i.pinimg.com/564x/8d/3f/93/8d3f9389425d9f8890094b4a8a665c6e.jpg');">
+  <div id="signedOutHeader">
+      <a href="../index.html" id="siteLogo"><img src="../images/sitelogo.png" style="height: 2em;"></a>
+      <h1 id="quizName">Aesthetic</h1>
+      <h1 id="signUpBtn" onclick="showSignUp()">Sign Up</h1>
+      <h1 style="margin:0; padding: 0;"> | </h1>
+      <h1 id="loginBtn" onclick="showLogin()">Login</h1>
+  </div>
+  
+  <div id="loggedInHeader" style="display: none;">
+      <a href="../index.html" id="siteLogo"><img src="../images/sitelogo.png" style="height: 2em;"></a>
+      <h1 id="quizName">Aesthetic</h1>
+      <h1 id="userHeaderName" onclick="wipeData()" style="margin: 0 1vw;"></h1>
+      <h1 style="margin:0; padding: 0;"> | </h1>
+      <h1 id="logOutBtn" onclick="logOut()" style="margin: 0 1vw;">Log Out</h1>
+  </div>
+
+  <div id="pinterestQuiz">
+    <div id="startQuiz" style="width: 50%;">
+      <h1 style="align-self: flex-start; font-weight: 600; margin-bottom: 0;">Answer This Quiz and Find Out Your Aesthetic</h1>
+      <p style="align-self: flex-start; font-family: 'Montserrat', sans-serif;">Have you ever wondered what type of aesthetic you have? Answer this short quiz and you will discover more about yourself! Find out whether your style is Soft Girl, Casual, Vintagecore, Y2K, Dark Academia or Cottagecore. </p>
+      <button id="start" onclick="startQuiz()">Start Quiz</button>
+    </div>
+    <div id="mainQuiz">
+      <h1 style="align-self: flex-start; font-weight: 600; margin-bottom: 0;">Answer This Quiz and Find Out Your Aesthetic</h1>
+      <p style="align-self: flex-start; font-family: 'Montserrat', sans-serif;">Have you ever wondered what type of aesthetic you have? Answer this short quiz and you will discover more about yourself! Find out whether your style is Soft Girl, Casual, Vintagecore, Y2K, Dark Academia or Cottagecore. </p>
+    <div id = "qContainer" style="display: none; text-align: center;"></div>
+      <button id="submitQuiz" onclick="checkQuizInput()" style="display: none;">Submit</button>
+    </div>
+
+    <div id="results" style="display:none;">
+      <h1>Quiz Results</h1>
+      <div id="resultContainer"> <div id="chartContainer"> <canvas id="chart"></canvas> </div> <ul id="legend"></ul> </div>
+      <p id="youAre" style="margin-bottom: 0; font-size: 1.5vw;"></p>
+      <h1 id="resultHeading" style="font-size: 3vw;"></h1>
+      <p id="resultDescription" style="font-size: 1.5vw; text-indent: 2em;"></p>
+      <button id="retryQuiz" onclick="location.reload()">Click here to retry the quiz</button>
+      <div id="history">
+        <p id="historyInitial" style="align-self: flex-start; margin-bottom: 0; font-size: 1vw;"></p>
+        <div id="historyContainer">
+        <div id="aesthetic"><p style="font-size: 1.5vw; font-weight: bold;">Aesthetic</p></div>
+        <div id="aestheticPercentage"><p style="font-size: 1.5vw; font-weight: bold;">Percentage</p></div>
+        </div>
+      </div>
+      <button id="resetAttemptHistory" onclick="resetAttemptHistory()">Reset ALL Attempt History</button>
+    </div>
+  </div>
+</div>
+
+<script src="../main.js"></script>
+<script src="../quiz1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

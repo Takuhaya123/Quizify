@@ -1,0 +1,125 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  width: 100%;
+  z-index: 1;
+  transition: filter 0.5s ease;
+  overflow: auto;
+}
+#signedOutHeader, #loggedInHeader {
+  position: fixed;
+  width: 98vw;
+  display: flex;
+  padding: 1vw;
+  align-items: flex-start;
+  justify-content: flex-end;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #bc3a55;
+  color: white;
+  height: 2.2em;
+  visibility: hidden;
+  z-index: 1000;
+}
+.clearInput {
+  border-radius: 1.5vw;
+  background-color: white;
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.2);
+  border: none;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: bold;
+  font-size: 1vw;
+  padding: .25vw 1vw;
+  margin-bottom: 1vw;
+}
+#sgnErrorInput, #lgnErrorInput {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+#siteLogo {
+  height: 2em;
+  margin-left: 1vw;
+  margin-right: auto;
+}
+#signUpBtn, #loginBtn {
+  margin: 0 1vw;
+}
+#signUpBtn:hover, #loginBtn:hover, #logOutBtn:hover, #userHeaderName:hover {
+  text-decoration: underline;
+}
+#signUpPopUp, #loginPopUp {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  width: 20%;
+  height: 45%;
+  border-radius: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: 1s ease;
+  background-color: #ffb6c1;
+}
+#signUpForm, #loginForm {
+  display: flex;
+  height: 93%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1vw;
+}
+#signUpForm label, #signUpForm input, #loginForm label, #loginForm input {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3vw;
+  margin: .5vw .2vw;
+}
+#signUpForm p, #loginForm p {
+  margin: 0;
+  padding: 0 .3vw;
+}
+#signUpForm input, #loginForm input {
+  width: 80%;
+  height: 2vw;
+  margin: 0 .2vw;
+  border: none;
+  border-radius: 5vh;
+  text-align: center;
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.2);
+}
+#signUpForm input[type="checkbox"], #loginForm input[type="checkbox"] {
+  height: 1.3vw;
+  width: 1.3vw;
+}
+.clickedInput {
+  border: 3px solid #bc3a55;
+}
+.submitForm {
+  background-color: #e75480;
+  margin-bottom: 1vw;
+}
+.resetForm {
+  margin-top: .5vw;
+  width: 50%;
+  background-color: white;
+}
+.blur {
+  filter: blur(5px);
+}
+h1, h2 {
+  font-family: 'Raleway', sans-serif;
+}
+h1 {
+  font-weight: 500;
+}
+h2 {
+  font-weight: 400;
+}

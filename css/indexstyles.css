@@ -1,0 +1,65 @@
+#welcome {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  visibility: hidden;
+}
+.container {
+  background: linear-gradient(135deg, #FAD0C4, #FFD1FF, #C7E2FF, #E1F7FF, #D8FFC7);
+}
+.welcomeH1 {
+  font-size: 10vw;
+  font-family: 'Montserrat Alternates', sans-serif;
+  margin: 1vw 0;
+}
+.siteDesc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vw;
+  width: 90%;
+}
+#quizSelect {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  height: 95vh;
+}
+#quizSelect h2 {
+  margin: 3% 5%;
+}
+#quizSelect p {
+  margin: -1% 5%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1vw;
+}
+#quizSelect > div {
+  display: flex;
+  height: 100%;
+  width: 41%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.quiz {
+  border-radius: 3.5%;
+}
+#quizSelect div div {
+  width: 95%;
+  height: 35%;
+  margin: 1vw;
+  transition: ease 0.5s;
+}
+#quizSelect div div:hover {
+  transform: scale(1.1);
+}
+#selectionImg {
+  height: 90%;
+  margin: 2%;
+  padding: 1%;
+  float: left;
+}

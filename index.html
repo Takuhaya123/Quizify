@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Declaration of meta tags and viewports-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="A. Mananghaya, R.B. Palacol, P.G. Sesante 9-Magnesium">
+  <meta name="keywords" content="quiz, quizify, know yourself, buzzfeed quizzes, quizzes, trivia, aesthetic, cars, genshin impact, genshin, genshin regions, genshin impact regions">
+  <!--Calling of stylesheets and fonts-->
+    <!-- font-family: 'Raleway', sans-serif; -->
+  <link href="css/indexstyles.css" rel="stylesheet" type="text/css" />
+  <link href="css/generalstyles.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,500;1,300;1,500&display=swap" rel="stylesheet">
+    <!-- font-family: 'Montserrat', sans-serif; -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <!-- font-family: 'Montserrat Alternates', sans-serif; -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+  <!--Site Logo and Title-->
+  <link rel="icon" href="images/icon.png" type=".png">
+  <title>Quizify</title>
+  <!-- The sources for the entire project can be accessed below
+  https://docs.google.com/document/d/1W6v9fRjvvU40eRXa02jJJkaZTs4sZhq-qu2sUFIdPJI/edit?usp=sharing
+  -->
+</head>
+
+<body onload="onloadCheck()">
+<!--Sign-up and login popup code-->
+<div id="signUpPopUp"> <!-- div that shows up on sign in-->
+<form id="signUpForm" onsubmit="return signInForm(event)">
+  <label for="username"><p>Username</p></label>
+  <input type="text" id="sgnusername" name="username" placeholder="Username" onblur="checkFormInput(event)">
+  <label for="password"><p>Password</p></label>
+  <input type="password" id="sgnpassword" name="password" placeholder="Password" onblur="checkFormInput(event)">
+  <label>
+  <input type="checkbox" onclick="showPassSgn()" style="vertical-align: middle;">
+  <span style="vertical-align: middle;">Show Password</span>  
+  </label>
+  <button class="clearInput" onclick="clearSgnForm()">Clear</button>
+  <p id="sgnErrorInput" style="display: none;"></p>
+  <input type="submit" class="submitForm" value="Sign Up" style="margin-bottom: 1vw;">
+  <input type="reset" class="resetForm" value="Cancel" onclick="cancelSignUp()">
+</form>
+</div>
+
+<div id="loginPopUp"> <!-- div that shows up on login-->
+<form id="loginForm" onsubmit="return loginForm(event)">
+  <label for="username"><p>Username</p></label>
+  <input type="text" id="lgnusername" name="username" placeholder="Username" onblur="checkFormInput(event)">
+  <label for="password"><p>Password</p></label>
+  <input type="password" id="lgnpassword" name="password" placeholder="Password" onblur="checkFormInput(event)">
+  <label>
+  <input type="checkbox" onclick="showPassLgn()" style="vertical-align: middle;">
+  <span style="vertical-align: middle;">Show Password</span>  
+  </label>
+  <button class="clearInput" onclick="clearSgnForm()">Clear</button>
+  <p id="lgnErrorInput" style="display: none;"></p>
+  <input type="submit" class="submitForm" value="Login" style="margin-bottom: 1vw;">
+  <input type="reset" class="resetForm" value="Cancel" onclick="cancelLogin()">
+</form>
+</div>
+<!-- other contents -->
+<div class="container">
+  <div id="signedOutHeader">
+      <a href="index.html" id="siteLogo"><img src="images/sitelogo.png" style="height: 2em;"></a>
+      <h1 id="signUpBtn" onclick="showSignUp()">Sign Up</h1>
+      <h1 style="margin:0; padding: 0;"> | </h1>
+      <h1 id="loginBtn" onclick="showLogin()">Login</h1>
+  </div>
+  
+  <div id="loggedInHeader" style="display: none;">
+      <a href="index.html" id="siteLogo"><img src="images/sitelogo.png" style="height: 2em;"></a>
+      <h1 id="userHeaderName" onclick="wipeData()" style="margin: 0 1vw;"></h1>
+      <h1 style="margin:0; padding: 0;"> | </h1>
+      <h1 id="logOutBtn" onclick="logOut()" style="margin: 0 1vw;">Log Out</h1>
+  </div>
+
+  <div id="welcome">
+    <h1 class="welcomeH1" id="welcomeTo" style="margin-top: 5vh;">Welcome to</h1>
+    <h1 class="welcomeH1" id="quizify">Quizify.</h1>
+    <p class="siteDesc">Quizify is a compilation of traditional and Buzzfeed inspired quizzes. Discover yourself and explore your personality from classic to trending quizzes.</p>
+  </div>
+    
+  <div id="quizSelect">
+    <div id="column1">
+      <div class="quiz" id="quiz1" style="background-color: #be8784">
+        <img src="images/quiz1.png" id="selectionImg">
+        <h2 class="quizHeading">Answer This Quiz and Find Out Your Aesthetic</h2>
+        <p class="quizDescription">Have you ever wondered what type of aesthetic you have? Answer this short quiz and you will discover more about yourself! Find out whether your style is Soft Girl, Casual, Vintagecore, Y2K, Dark Academia or Cottagecore.</p>
+      </div>
+      <div class="quiz" id="quiz2" style="background-color: #a58e8f">
+        <img src="images/quiz2.png" id="selectionImg">
+        <h2 class="quizHeading">How Well Do You Know Your Cars?</h2>
+        <p class="quizDescription">Do you want to test your car knowledge? Take this quiz to find out how well you know them based on five different ranks: Novice, Enthusiast, Aficionado, Expert, and Guru. The questions range from true or false, multiple choice, and enumeration split across three difficulties.</p>
+      </div>
+    </div>
+    <div id="column2">
+      <div class="quiz" id="quiz3" style="background-color: #e7dbd7">
+        <img src="images/quiz3.png" id="selectionImg">
+        <h2 class="quizHeading">A Quiz on the Most Random General Trivia</h2>
+        <p class="quizDescription"></p>
+      </div>
+      <div class="quiz" id="quiz4" style="background-color: #bc3a55">
+        <img src="images/quiz4.png" id="selectionImg">
+        <h2 class="quizHeading">Which Genshin Region You are From?</h2>
+        <p class="quizDescription">Ever wondered what region would you be from if you were magically transported into Genshin Impact? Well, answer this quiz honestly with your preferences and we will tell you! Find out if you are from Liyue, Mondstadt, Inazuma, or Sumeru.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js"></script>
+<script src="main.js"></script>
+<script>
+  /* functions for redirecting to quiz pages */
+  var quizzes = document.querySelectorAll(".quiz");
+  quizzes.forEach(function(quiz) {
+    quiz.addEventListener("click", function() {
+      window.location.href = "htdocs/" + quiz.id + ".html";
+    });
+  });
+</script>
+</body>
+
+</html>

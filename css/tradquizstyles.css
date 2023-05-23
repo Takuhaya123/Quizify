@@ -1,0 +1,258 @@
+.container{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+#quizName {
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  z-index: -1;
+}
+#tradQuiz {
+  height: 95vh;
+  margin-top: 5vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#startQuiz, #mainQuiz {
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  align-content: center;
+}
+#mainQuiz {
+  align-items: center;
+  width: 75%;
+  padding: 1%;
+  background-color: rgba(255,255,255,.8);
+  display: none;
+  margin-top: 5vh;
+  border-radius: 1.5vw;
+}
+#startQuiz {
+  align-content: flex-start;
+  background-color: rgba(255,255,255,0.9);
+  padding: 1vw;
+  border-radius: 1.5vw;
+  width: 70%;
+}
+#startQuiz h1 {
+  font-weight: bold;
+}
+#start, #submitQuiz, #retryQuiz, #resetAttemptHistory {
+  border-radius: 1.5vw;
+  background-color: white;
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.2);
+  border: none;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: bold;
+  font-size: 1vw;
+  padding: .25vw;
+}
+#start {
+  height: 1.5vw;
+  width: 10vw;
+}
+#submitQuiz {
+  height: 2vw;
+  width: 15vw;
+  margin: .5vw auto 2vw auto;
+}
+#retryQuiz, #resetAttemptHistory {
+  height: 2vw;
+  width: 15vw;
+}
+#resetAttemptHistory {
+  margin: 0 auto;
+}
+#qContainer {
+  width: 95%;
+  margin-top: 1vh;
+}
+.question{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 1vw 0;
+  border-radius: 1.5vw;
+  flex-direction: column;
+  align-items: center;
+}
+.question > p {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 2vw;
+  margin: 1vw 0;
+  font-style: bold;
+  padding: 0 .5vw;
+}
+.qImage {
+  height: 60vh;
+  width: 80%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+.snippet {
+  height: 25vw;
+  width: 25vw;
+}
+.choices {
+  display: flex;
+  width: 95%;
+  height: 40%;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.imgDiv {
+  display: flex;
+  width: 25%;
+  margin: 0 0.3vw .5vw 0.3vw;
+  flex-direction: row;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  transition: ease 0.5s;
+  justify-content: center;
+  background-color: white;
+  border-radius: 1.5vw;
+}
+.imgDiv:hover {
+  transform: scale(1.06);
+}
+.image {
+  height: 16vw;
+  width: 16vw;
+  object-fit: cover;
+  padding: 0.5vw;
+  border-radius: 1.5vw;
+}
+.choiceCaption {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 1vw;
+  margin: 0;
+  padding: .5vw;
+}
+.cNoImage, .tf {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+.tf {
+  margin: .5vw 0;
+}
+.column {
+  text-align: left;
+  margin: 0 .5vw;
+  width: 45%;
+}
+.textChoice, .tfChoice {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5vw;
+  margin: .5vw 0;
+  padding: .5vw;
+  border-radius: 1.5vw;
+  transition: ease 0.5s;
+  font-weight: bold;
+  background-color: white;
+}
+.tfChoice {
+  text-align: left;
+  margin: 0 0.5vw;
+  width: 45%;
+}
+.textChoice:hover, .tfChoice:hover {
+  transform: scale(1.1);
+}
+.questionInput {
+  border: none;
+  border-radius: 1.5vw;
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.2);
+  width: 50%;
+  height: 1vw;
+  padding: 1vw;
+  font-family: 'Montserrat', sans-serif;
+  margin: 1vw 0;
+  text-align: center;
+  font-weight: bold;
+}
+.enum {
+  width: 80%;
+}
+.selected {
+  opacity: 1;
+}
+.deselected {
+  opacity: 0.5;
+}
+#results {
+  flex-direction: column;
+  width: 50%;
+  margin-top: 5vh;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 1.5vw;
+  padding: 1vw;
+}
+#results h1 {
+  margin: 0;
+  padding: .5vw;
+}
+#results p {
+  padding: .5vw;
+  font-family: 'Raleway', sans-serif;
+}
+#legend {
+  list-style-type: none;
+}
+#results li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5vw;
+}
+.percentage {
+  font-weight: bold;
+}
+#resultContainer {
+  width: 100%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+#chartContainer {
+  width: 20vw;
+  height: 20vw;
+}
+#history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#historyContainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+}
+#rank, #carScore{
+  width: 50%;
+  text-align: center;
+  font-size: 1vw;
+}
